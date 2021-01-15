@@ -1,0 +1,15 @@
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\bin\Debug\Sharp File Info.exe.config
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\bin\Debug\Sharp File Info.exe
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\bin\Debug\Sharp File Info.pdb
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp File Info.csprojAssemblyReference.cache
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp_File_Info.Properties.Resources.resources
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp File Info.csproj.GenerateResource.cache
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp File Info.csproj.CoreCompileInputs.cache
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp File Info.exe
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp File Info.pdb
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp_File_Info.MainWindow.resources
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp_File_Info.UserControlHashes.resources
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp_File_Info.UserControlEXIF.resources
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\bin\Debug\ExifLib.dll
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp File Info.csproj.CopyComplete
+C:\Users\1arka\source\repos\Sharp File Info\Sharp File Info\obj\Debug\Sharp_File_Info.UserControlFileInfo.resources
