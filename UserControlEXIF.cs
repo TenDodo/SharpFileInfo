@@ -57,7 +57,7 @@ namespace Sharp_File_Info
                     String make, model, lensMake, lensModel, lensSerialNumber, dateTime, gPSDateStamp, gPSDestBearingRef, gPSDestDistanceRef, gPSLatitudeRef, gPSLongitudeRef, gPSMapDatum, gPSSatellites, artist, bodySerialNumber, cameraOwnerName, copyright, dateTimeDigitized, dateTimeOriginal, imageDescription, imageUniqueID, relatedSoundFile, software, spectralSensitivity, subsecTime, subsecTimeDigitized, subsecTimeOriginal, gPSDestLatitudeRef, gPSDestLongitudeRef, gPSImgDirectionRef, gPSMeasureMode, gPSSpeedRef, gPSStatus, gPSTrackRef, gPSProcessingMethodString, exifVersionString;
                     double gPSAltitude, apertureValue, brightnessValue, exposureTime, fNumber, focalLength, focalPlaneXResolution, focalPlaneYResolution, shutterSpeedValue, xResolution, yResolution, gPSDestBearing, gPSDestDistance, gPSDOP, gPSHPositioningError, gPSImgDirection, gPSSpeed, gPSTrack, compressedBitsPerPixel, digitalZoomRatio, exposureBiasValue, flashEnergy, maxApertureValue, subjectDistance;
                     double[] gPSLatitude, gPSLongitude, gPSTimestamp, lensSpecification, gPSDestLatitude, gPSDestLongitude, primaryChromaticities, referenceBlackWhite, whitePoint, yCbCrCoefficients;
-                    UInt16 colorSpace, compression, exposureMode, exposureProgram, flash, focalLengthIn35mmFilm, focalPlaneResolutionUnit, gainControl, meteringMode, photographicSensitivity, photometricInterpretation, resolutionUnit, sceneCaptureType, sensingMethod, whiteBalance, yCbCrPositioning, gPSDifferential, contrast, customRendered, lightSource, orientation, planarConfiguration, samplesPerPixel, saturation, sensitivityType, sharpness, subjectDistanceRange, xPAuthor, xPComment, xPKeywords, xPSubject, xPTitle;
+                    UInt16 colorSpace, compression, exposureMode, exposureProgram, flash, focalLengthIn35mmFilm, focalPlaneResolutionUnit, gainControl, meteringMode, photographicSensitivity, photometricInterpretation, resolutionUnit, sceneCaptureType, sensingMethod, whiteBalance, yCbCrPositioning, gPSDifferential, contrast, customRendered, lightSource, orientation, planarConfiguration, samplesPerPixel, saturation, sensitivityType, sharpness, subjectDistanceRange, xPAuthor, xPComment, xPKeywords, xPSubject, xPTitle, imageWidth2, imageLength2;
                     UInt32 iSOSpeed, iSOSpeedLatitudeyyy, iSOSpeedLatitudezzz, imageWidth, imageLength, recommendedExposureIndex, rowsPerStrip, standardOutputSensitivity;
                     UInt16[] yCbCrSubSampling, gPSVersionID, bitsPerSample, subjectArea, subjectLocation, transferFunction;
                     object pixelXDimension, pixelYDimension, iSOSpeedRatings, cFAPattern, deviceSettingDescription, exposureIndex, fileSource, jPEGInterchangeFormat, jPEGInterchangeFormatLength, makerNote, oECF, spatialFrequencyResponse, stripByteCounts, stripOffsets, userComment, lightSourceObject;
@@ -938,24 +938,53 @@ namespace Sharp_File_Info
                     {
                         LensSpecificationLabel.Text = "Lens Specification: No data";
                     }
-                    if (reader.GetTagValue<UInt32>(ExifTags.ImageWidth, out imageWidth))
+                    try
                     {
-                        ImageWidthLabel.Text = "Image Width: " + imageWidth.ToString();
+                        if (reader.GetTagValue<UInt32>(ExifTags.ImageWidth, out imageWidth))
+                        {
+                            ImageWidthLabel.Text = "Image Width: " + imageWidth.ToString();
+                        }
+                        else
+                        {
+                            ImageWidthLabel.Text = "Image Width: No data";
+                        }
                     }
-                    else
+                    catch
                     {
-                        ImageWidthLabel.Text = "Image Width: No data";
+                        if (reader.GetTagValue<UInt16>(ExifTags.ImageWidth, out imageWidth2))
+                        {
+                            ImageWidthLabel.Text = "Image Width: " + imageWidth2.ToString();
+                        }
+                        else
+                        {
+                            ImageWidthLabel.Text = "Image Width: No data";
+                        }
                     }
-                    if (reader.GetTagValue<UInt32>(ExifTags.ImageLength, out imageLength))
+                    try
                     {
-                        ImageLengthLabel.Text = "Image Length: " + imageWidth.ToString();
+                        if (reader.GetTagValue<UInt32>(ExifTags.ImageLength, out imageLength))
+                        {
+                            ImageLengthLabel.Text = "Image Length: " + imageLength.ToString();
+                        }
+                        else
+                        {
+                            ImageLengthLabel.Text = "Image Length: No data";
+                        }
                     }
-                    else
+                    catch
                     {
-                        ImageLengthLabel.Text = "Image Length: No data";
-                    }
 
 
+                        if (reader.GetTagValue<UInt16>(ExifTags.ImageLength, out imageLength2))
+                        {
+                            ImageLengthLabel.Text = "Image Length: " + imageLength2.ToString();
+                        }
+                        else
+                        {
+                            ImageLengthLabel.Text = "Image Length: No data";
+                        }
+
+                    }
                     if (reader.GetTagValue<Byte[]>(ExifTags.GPSAreaInformation, out gPSAreaInformation))
                     {
                         GPSAreaInformationLabel.Text = "GPS Area Information: ";
